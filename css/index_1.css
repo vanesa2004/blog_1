@@ -1,0 +1,148 @@
+*{
+    box-sizing: border-box;
+    margin: 0;                           
+    padding: 0;   
+}
+
+.grid-container{
+    box-shadow: -1px 1px 7px 0px #000;  
+    text-align: center;
+}
+
+.header{
+    grid-area: header;
+    background-color: #c0c0c0e5;
+}
+
+img { /* imagenes del slider */
+    width: 500px;
+}
+
+#imagenes{ /* imagenes slider */
+    width: 500px;
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+#imagenes ul{
+    list-style: none;
+    width: 2800px;
+    display: flex;
+
+    animation: slide 20s infinite alternate;
+}
+
+@keyframes slide{
+    0% {margin-left: 0px;}
+    20% {margin-left: 0px;}
+
+    25% {margin-left: -500px;}
+    45% {margin-left: -500px;}
+
+    50% {margin-left: -1000px;}
+    70% {margin-left: -1000px;}
+
+    75% {margin-left: -1500px;}
+    100%{margin-left: -1500px;}
+}
+
+.nav{ /* menu */
+    grid-area: nav;
+    background-image: url(/blogs/imagenes_blog1/img_nav.jpg);
+}
+
+.menu{  
+    list-style: none; 
+       
+}
+
+.menu li {
+    padding: 30px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: #000000; 
+    font-size: 30px;  
+}
+
+a:hover{
+    color: #1A619F ;
+}
+
+.section{
+    grid-area: section;
+    background-color: #97d68ee5;
+    padding: 15px;
+}
+
+.article-one{ /* articulo 1 de la seccion*/
+    
+    width: 435px;
+    float: left;
+    padding: 10px;
+    
+}
+
+.article-two{  /* articulo 1 de la seccion*/
+    
+    width: 435px;
+    float: right;
+    padding: 10px;
+}
+
+p{ /* parrafo de los dos articulos*/
+    text-align: left;   
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.title{ /* titulo de los dos articulos*/
+    font-size: 30px;
+    text-align: center;
+    margin: 7px;
+}
+
+.img-one{  /* imagen del primer articulo*/
+    float: left;
+    width: 200px;
+    margin-right: 5px;
+}
+
+.img-two{ /* imagen del segundo articulo*/
+    float: right;
+    width: 200px;
+}
+
+
+.footer{ 
+    grid-area: footer;
+    background-color: white;
+    
+}
+
+.img{ /* imagens del dooter*/
+    padding-inline: 0px;
+    width: 330px;
+}
+
+.grid-container{
+    display: grid;
+    gap: 0px;
+    grid-template-areas: 
+        "header"
+        "nav"
+        "section"
+        "footer"
+         ;
+}
+
+@media(min-width: 1080px){
+    .grid-container{
+        grid-template: 
+           "header header nav" auto
+           "section section nav" auto
+           "footer footer footer" 180px/
+           300px auto 400px ;
+    }
+}    /*  RESPONSIVE */ 
